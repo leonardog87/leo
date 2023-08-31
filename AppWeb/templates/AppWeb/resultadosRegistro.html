@@ -1,0 +1,25 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} resultado registro {% endblock %}
+
+{% block titulo %} resultados de busqueda por registro{% endblock %}
+
+{% block contenido_cambiante %}
+<h1> resultados de busqueda por registro </h1>
+
+    {% for r in registrados %}
+    <table>
+        <li>{{ r }}</li>
+        <button>
+            <a class="btn btn-" href="{% url 'eliminarRegistrado' r.id %}">eliminar</a>
+            <a class="btn btn-" href="{% url 'editarRegistrado' r.id %}">editar</a>
+        </button>
+    </table>
+    {% endfor %}
+
+    <a class="btn btn-" href="{% url 'registro' %}">Registro</a>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} resultado busqsueda{% endblock %}
+
+{% block titulo %} resultados de busqueda por mail{% endblock %}
+
+{% block contenido_cambiante %}
+<h1> resultados de busqueda por mail </h1>
+
+    {% for dato in datos %}
+
+        <h3> {{ dato.email }}</h3>
+
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} login {% endblock %}
+
+{% block titulo %} LOGIN {% endblock %}
+
+{% block contenido_cambiante %}
+<h1> LOGIN </h1>
+
+<form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+
+           {{ formulario_registro.as_table }}
+
+        <input type="submit" vaLue="Entrar">
+    
+    </form>
+
+   
+
+
+{% endblock %}

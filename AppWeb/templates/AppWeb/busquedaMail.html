@@ -1,0 +1,22 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %}bm {% endblock %}
+
+{% block titulo %} busquedaMail {% endblock %}
+
+{% block contenido_cambiante %}
+
+<h1> busquedaMail </h1>
+
+<form action="{% url 'buscar' %}" method="GET">
+
+    <input type="text" name="email" id="email" placeholder="inserte el mail">
+    <input type="submit" vaLue="buscar mail">
+
+</form>
+
+<h3>{{ mensaje_nobusqueda }}</h3>
+
+{% endblock %}

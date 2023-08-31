@@ -1,0 +1,24 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} vendedor {% endblock %}
+
+{% block titulo %} Vendedor {% endblock %}
+
+{% block contenido_cambiante %}
+<h1> Vendedor </h1>
+
+<form action="{% url 'vendedor' %}" method="POST"> {% csrf_token %}
+
+           {{ formulario_vendedor.as_table }}
+
+        <input type="submit" vaLue="Guardar">
+    
+    </form>
+
+    <h3>{{ mensaje_vendedor }}</h3>
+   
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} eliminar {% endblock %}
+
+{% block titulo %} resultados eliminar por registro{% endblock %}
+
+{% block contenido_cambiante %}
+<h1> resultados de busqueda por registro </h1>
+
+    {% for r in registrados %}
+   
+        <li>{{ r.nombre }}</li>
+        <button>
+            <a class="btn btn-" href="{% url 'resultadosRegistro'%}">eliminar</a>
+        </button>
+    {% endfor %}
+
+    <a class="btn btn-" href="{% url 'registro' %}">Registro</a>
+
+
+{% endblock %}

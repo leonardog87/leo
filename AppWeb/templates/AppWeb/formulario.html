@@ -1,0 +1,22 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} formulario {% endblock %}
+
+{% block titulo %}formulario{% endblock %}
+
+{% block contenido_cambiante %}
+    <h2> aca va el formulario </h2>
+
+    <form action="{% url 'formulario' %}" method="POST"> {% csrf_token %}
+
+        {{ formulario_mail.as_table }}
+
+        <input type="submit" vaLue="Guardar">
+    
+    </form>
+   <h3>{{ mensaje }}</h3>
+
+
+{% endblock %}

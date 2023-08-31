@@ -1,0 +1,23 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block titulo %}EDITANDO registrados: {{ registro }} {% endblock %}
+
+{% block contenido_cambiante %}
+
+<form action="{% url 'editarRegistrado' registro.id %}" method="POST"> {% csrf_token %}
+
+    <table>
+    
+        {{ formulario.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="Guardar Cambios">
+    
+    
+</form>
+
+
+{% endblock %}
