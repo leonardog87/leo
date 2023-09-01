@@ -1,0 +1,26 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} vendedor {% endblock %}
+
+{% block titulo %} Vendedor {% endblock %}
+
+{% block contenido_cambiante %}
+
+<form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="Guardar">
+    
+    
+</form>
+
+<a class="btn btn-" href="{% url 'cambiar_password' %}">Cambiar contraseña</a>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} registro {% endblock %}
+
+{% block titulo %} REGISTRO {% endblock %}
+
+{% block contenido_cambiante %}
+
+<form method="post">{% csrf_token %}
+    Esta segur@ te eliminar el usuario: "{{ object.usuario }}"?
+    <input type="submit" value="SI">
+
+</form>
+
+
+{% endblock %}

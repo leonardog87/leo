@@ -1,0 +1,30 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} Registrar {% endblock %}
+
+{% block titulo %} Registrar {% endblock %}
+
+{% block contenido_cambiante %}
+<h1> Registrar </h1>
+
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+    
+    </table>
+
+    <input type="submit" value="REGISTRAR USUARIO">
+
+
+
+
+</form>
+
+   
+
+
+{% endblock %}

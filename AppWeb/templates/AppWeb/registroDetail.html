@@ -1,0 +1,17 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} resultado registro {% endblock %}
+
+{% block titulo %} resultados de busqueda por registro{% endblock %}
+
+{% block contenido_cambiante %}
+<h1> resultados de busqueda por registro </h1>
+
+<p>USUARIO : <i>{{registro.usuario}}</i></p>
+<p>NOMBRE : <i>{{registro.nombre}}</i></p>
+<p>APELLIDO : <i>{{registro.apellido}}</i></p>
+<p>EMAIL : <i>{{registro.email}}</i></p>
+
+{% endblock %}

@@ -23,14 +23,20 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">INICIO</a>
+                {% if user.is_authenticated %}
                 <a class="btn btn-" href="{% url 'formulario' %}">formulario</a>
                 <a class="btn btn-" href="{% url 'vendedor' %}">Vendedor</a>
                 <a class="btn btn-" href="{% url 'comprador' %}">Comprador</a>
                 <a class="btn btn-" href="{% url 'resultadosRegistro' %}">listaRegistro</a>
                 <a class="btn btn-" href="{% url 'busquedaMail' %}">buscar</a>
                 <a class="btn btn-" href="{% url 'registro' %}">Registro</a>
-                <a class="btn btn-" href="{% url 'login' %}">Login</a>
-                <a class="btn btn-info" href="http://127.0.0.1:8000/admin/" target="_blank">ADMIN</a>
+                <a class="btn btn-success" href="{% url 'editarPerfil' %}">editar Perfil</a>
+                <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+                <a class="btn btn-" href="{% url 'registroList' %}">registroList</a> 
+                {% else %}
+                <a class="btn btn-" href="{% url 'register' %}">register</a>
+                <a class="btn btn-" href="{% url 'login' %}">Login</a>                
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->
